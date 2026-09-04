@@ -1,0 +1,195 @@
+/*======================================== основное ===============================================*/
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Тело */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/*======================================== viewing ===============================================*/
+
+/* Контейнер для горизонтальной прокрутки таблицы */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Стили для основного блока контента заявок */
+.content-section {
+    background-color: #1e1e2e;
+    color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+    margin: 30px 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* Стили для таблицы заявок */
+.applications-table {
+    width: 100%;
+    min-width: 800px; /* Минимальная ширина для включения горизонтальной прокрутки */
+    border-collapse: collapse;
+}
+
+.applications-table th,
+.applications-table td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+.applications-table th {
+    background-color: #333;
+}
+
+.applications-table tr:nth-child(even) {
+    background-color: #2c2c3e;
+}
+
+.applications-table tr:hover {
+    background-color: #3a3a4d;
+}
+
+/* Стили для кнопок действий */
+.accept-btn,
+.reject-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 4px;
+}
+
+.reject-btn {
+    background-color: #e53935;
+    color: #ffffff;
+}
+
+.reject-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Стили для кнопок выбора меню (вкладок) */
+.tab-button {
+    background-color: #6c5ce7;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: #a855f7;
+}
+/* Стили для кнопок действий */
+.accept-btn,
+.reject-btn {
+    padding: 10px 20px;        /* Увеличенный отступ для удобства */
+    border: none;              /* Без границы */
+    border-radius: 5px;        /* Скругление углов */
+    font-size: 16px;           /* Размер шрифта */
+    cursor: pointer;           /* Курсор при наведении */
+    transition: background-color 0.3s ease;  /* Плавное изменение цвета фона */
+    margin: 0 4px;             /* Небольшой отступ между кнопками */
+}
+
+.accept-btn {
+    background-color: #28a745; /* Зеленый фон */
+    color: #fff;               /* Белый текст */
+}
+
+
+.reject-btn {
+    background-color: #dc3545; /* Красный фон */
+    color: #fff;               /* Белый текст */
+}
+
+.reject-btn:hover {
+    background-color: #c82333; /* Темно-красный при наведении */
+}
+
+/* Стили для фильтра */
+#filter {
+    background-color: #2c2c3e;
+    color: #ffffff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#filter:hover {
+    background-color: #3a3a4d;
+}
+
+#filter:focus {
+    outline: none;
+    border-color: #a855f7;
+}
+
+/* Стили для вкладок */
+.tabs {
+    margin-bottom: 20px;  /* Отступ снизу для вкладок */
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin-right: 10px; /* Отступ между кнопками вкладок */
+    cursor: pointer;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+
+/* Стили для фильтра */
+#filter {
+    background-color: #2c2c3e;
+    color: #ffffff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;  /* Отступ снизу для фильтра */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#filter:hover {
+    background-color: #3a3a4d;
+}
+
+#filter:focus {
+    outline: none;
+    border-color: #a855f7;
+}
+
+.applications-table td {
+    word-wrap: break-word;
+    white-space: normal;
+}
+

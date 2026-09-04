@@ -1,0 +1,151 @@
+/*======================================== основное ===============================================*/
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Тело */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Подвал сайта */
+footer {
+    text-align: center;
+    padding: 20px 20px;
+    color: #7a7a7a;
+    display: flex;
+    justify-content: flex-start;
+}
+
+/*======================================== footer ===============================================*/
+/* Ограничение размера гифки */
+.footer-gif {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+/*!* Основной контент страницы *!*/
+/*.main-content {*/
+/*    min-height: 100vh; !* Минимальная высота экрана *!*/
+/*    padding-bottom: 150px; !* Отступ снизу, чтобы не перекрывать подвал *!*/
+/*}*/
+
+/* Стиль для подвала */
+footer {
+    position: static;
+    left: 0;
+    background-color: #0d0d0d; /* Цвет фона подвала, совпадающий с цветом страницы */
+    color: #ffffff; /* Цвет текста подвала */
+    padding: 40px 15%; /* Внутренние отступы */
+    margin: 0; /* Убираем любые внешние отступы */
+    display: flex; /* Делаем подвал flex-контейнером */
+    justify-content: flex-start; /* Выравнивание по левой стороне */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+}
+
+/* Контент подвала */
+.footer-content {
+    display: flex; /* Делаем контент flex-контейнером */
+    justify-content: flex-start; /* Выравнивание по левой стороне */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    width: 50%; /* Ширина контента подвала 100% */
+    padding-top: 20px; /* Отступ сверху для текста */
+    color: #b0b0b0;
+}
+
+/* Секция подвала */
+.footer-section {
+    flex: 1;
+    text-align: left;
+    margin-right: 20%;
+}
+
+/* Заголовки секций подвала */
+.footer-section h3 {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* Стили для списка в секциях подвала */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Стили для элементов списка */
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section p{
+    line-height: 25px;
+    white-space: nowrap;
+}
+
+/* Ссылки в секциях подвала */
+.footer-section ul li a,
+.footer-section a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Стили для ссылок при наведении */
+.footer-section ul li a:hover,
+.footer-section a:hover {
+    color: #a855f7;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+}
+
+.links a{
+    margin-bottom: 7px;
+}
+
+/* Стили для логотипа подвала */
+.footer-logo {
+    display: flex;
+    color: #ffffff;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: 700;
+}
+
+/* Изображение логотипа подвала */
+.footer-logo-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+/*======================================== адаптация ===============================================*/
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    footer {
+        padding: 20px 5%;
+    }
+}
+
+/* Скрываем изображение только для мобильных устройств */
+@media (max-width: 768px) and (max-resolution: 3dppx) {
+    .footer-gif {
+        display: none !important;
+    }
+}

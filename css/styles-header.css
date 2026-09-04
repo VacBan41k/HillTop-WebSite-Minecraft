@@ -1,0 +1,382 @@
+/*======================================== основное ===============================================*/
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+
+header {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15%;
+    position: relative;
+    background-color: #0d0d0d;
+    color: #ffffff;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+}
+
+/*======================================== logo ===============================================*/
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b0b0b0;
+    display: flex;
+    align-items: center;
+    gap: -10px;
+}
+
+/* Для изображения в логотипе */
+.logo-img {
+    width: 35px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота, пропорциональная ширине */
+    vertical-align: middle; /* Выравнивание изображения по центру строки */
+}
+
+/* Убираем подчеркивание и изменяем цвет для ссылок */
+.logo a {
+    text-decoration: none;  /* Убираем подчеркивание */
+    color: #b0b0b0;
+
+}
+
+.logo-text {
+    font-size: 24px; /* Размер текста */
+    font-weight: bold;
+    font-family: 'Arial', sans-serif; /* Шрифт */
+    color: #b0b0b0;
+    transition: all 0.4s;
+}
+
+.logo-text:hover{
+    color: white;
+}
+
+/*======================================== request-button ===============================================*/
+/* Кнопка "Вход" */
+.request-button-container {
+    align-items: center;
+    right: 20px;
+}
+
+.request-button {
+    background-color: #6c5ce7;
+    border: none;
+    padding: 15px 40px;
+    color: #fff;
+    border-radius: 35px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.request-button:hover {
+    background-color: #7d70cf;
+    box-shadow: 0 0 11px 2px rgba(125, 112, 207, 0.5);
+}
+
+/*======================================== навигация ===============================================*/
+.nav-center {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #b0b0b0;
+    font-weight: 500;
+    transition: color 0.4s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+/*======================================== бургер ===============================================*/
+/* Добавляем базовый стиль бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease; /* Анимация линий бургер-меню */
+}
+
+/* Анимация для активного состояния бургера */
+.burger-menu.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger-menu.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/*======================================== адаптация ===============================================*/
+/* Мобильные устройства */
+@media (max-width: 480px) {
+    .request-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
+
+/* Меню для ПК: отображается всегда */
+@media (min-width: 769px) {
+    .nav-center {
+        display: flex; /* Горизонтальное меню для ПК */
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Убираем трансформацию */
+        opacity: 1; /* Делаем меню видимым */
+        pointer-events: auto; /* Включаем клики */
+        flex-direction: row; /* Горизонтальное расположение ссылок */
+        gap: 10px; /* Отступы между пунктами */
+        justify-content: flex-start;
+    }
+
+    .nav-center a {
+        transform: none; /* Убираем анимацию для ПК */
+        opacity: 1;
+    }
+
+    .burger-menu {
+        display: none; /* Бургер-меню скрыто на ПК */
+    }
+}
+
+/* Меню для мобильных: скрыто по умолчанию */
+@media (max-width: 768px) {
+    .nav-center {
+        display: flex;
+        flex-direction: column; /* Вертикальное меню */
+        background-color: #333;
+        position: absolute;
+        top: 100%; /* Начинаем из-под шапки */
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        z-index: 1000;
+        opacity: 0; /* Скрываем меню */
+        pointer-events: none; /* Блокируем клики */
+        transform: translateY(-150%); /* Прячем меню за пределами экрана */
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Плавное появление */
+    }
+
+    /* Когда меню активно на мобильных устройствах */
+    .nav-center.active {
+        opacity: 1; /* Делаем меню видимым */
+        pointer-events: auto; /* Разрешаем клики */
+        transform: translateY(0); /* Показываем меню */
+    }
+
+    /* Анимация для пунктов меню на мобильных */
+    .nav-center a {
+        transform: translateY(-20px); /* Сдвигаем элементы вверх */
+        opacity: 0; /* Прячем элементы */
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    /* Анимация пунктов меню с задержкой */
+    .nav-center.active a {
+        opacity: 1; /* Показываем элементы */
+        transform: translateY(0); /* Возвращаем в исходное положение */
+    }
+
+    .nav-center.active a:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav-center.active a:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .nav-center.active a:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .nav-center.active a:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between; /* Размещаем элементы по краям */
+        align-items: center;
+        padding: 10px 15px; /* Уменьшаем отступы для мобильных */
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Отступ между логотипом и названием */
+    }
+
+    .burger-menu {
+        display: flex; /* Показываем бургер-меню */
+    }
+
+    .request-button-container {
+        display: flex;
+        justify-content: flex-end; /* Кнопка справа */
+    }
+
+    .request-button {
+        padding: 8px 16px; /* Уменьшаем размеры кнопки */
+        font-size: 14px; /* Уменьшаем шрифт для мобильных */
+    }
+
+    .logo-text {
+        display: none;
+    }
+}
+
+/*======================================== модальное окно ===============================================*/
+/* Стиль для модального окна */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    backdrop-filter: blur(10px); /* Эффект блюра */
+    display: none; /* По умолчанию скрыто */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    display: flex; /* Для центрирования */
+    opacity: 0; /* Скрыто по умолчанию */
+    pointer-events: none; /* Блокируем клики */
+    transition: opacity 0.4s ease; /* Плавная прозрачность */
+    will-change: opacity; /* Оптимизация */
+}
+
+/* Состояние "показано" */
+.modal.show {
+    opacity: 1; /* Делаем окно видимым */
+    pointer-events: auto; /* Разрешаем клики */
+}
+
+/* Состояние "показано" для содержимого */
+.modal.show .modal-content {
+    transform: translateY(0); /* Возвращаем в центр */
+    opacity: 1; /* Делаем видимым */
+}
+
+.modal-content {
+    background: #1e1e2e; /* Цвет фона окна */
+    padding: 20px;
+    border-radius: 40px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    transform: translateY(100%); /* Начальная позиция ниже экрана */
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Анимация движения и прозрачности */
+    opacity: 0; /* Скрыто по умолчанию */
+    will-change: transform, opacity; /* Оптимизация */
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+}
+
+/* VK ID кнопка */
+.login-option.vk {
+    display: block; /* Ссылка занимает всю ширину */
+    background: #0077ff; /* Синий цвет для VK */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 100%; /* Кнопка растягивается на 100% ширины родителя */
+    padding: 8px 16px; /* Внутренние отступы */
+    font-size: 16px;
+    text-align: center; /* Выравниваем текст по центру */
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.login-option.vk:hover {
+    background: #005bb5; /* Тёмно-синий при наведении */
+}
+
+
+
+/*======================================== user ===============================================*/
+/* Стили для блока user-info */
+.user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Стили для аватарки */
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* Стили для выезжающего меню */
+.user-menu {
+    position: absolute;
+    top: 50px; /* Позиция под аватаркой */
+    right: 0;
+    width: 150px;
+    background-color: #1e1e2e;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none; /* Меню скрыто по умолчанию */
+    flex-direction: column;
+    z-index: 1000;
+    animation: slide-down 0.3s ease-out;
+}
+
+.user-menu .menu-item {
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.user-menu .menu-item:hover {
+    background-color: #6c5ce7;
+}
+
+/* Анимация для плавного появления меню */
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

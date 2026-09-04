@@ -1,0 +1,158 @@
+/*======================================== основное ===============================================*/
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* Тело */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/*======================================== tape ===============================================*/
+
+/* Контейнер ленты */
+.tape-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ===== Стили для карточек постов ===== */
+.post-card {
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1e1e2e;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* ===== Стили заголовка поста ===== */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-header .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.post-header .user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-header .nickname {
+    font-weight: bold;
+    color: #fff;
+}
+
+.post-header .post-date {
+    font-size: 12px;
+    color: #bbb;
+}
+
+/* ===== Стили содержимого поста ===== */
+.post-content {
+    margin-bottom: 10px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.post-content img,
+.post-content video {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    display: block;
+    margin: 10px auto;
+    border-radius: 4px;
+}
+
+/* ===== Стили футера поста ===== */
+.post-footer {
+    display: flex;
+    justify-content: flex-start; /* Все кнопки группируются в левом нижнем углу */
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+}
+
+/* Кнопки лайка и дизлайка */
+.like-button,
+.dislike-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #6c5ce7;
+    transition: color 0.3s;
+}
+
+.like-button:hover,
+.dislike-button:hover {
+    color: #a855f7;
+}
+
+/* Счётчики голосов */
+.vote-count {
+    font-size: 16px;
+    margin-left: 5px;
+    color: #fff;
+}
+
+/* Кнопка закрепления (pin button) */
+.pin-button {
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.pin-button:hover {
+    background-color: #5a4ecb;
+}
+
+/* Кнопка удаления поста */
+.delete-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: red;
+    transition: color 0.3s;
+}
+
+.delete-button:hover {
+    color: #ff5555;
+}
+
+/* Дополнительные стили для закреплённых постов */
+.post-card.pinned {
+    border: 2px solid #6c5ce7;
+}

@@ -1,0 +1,165 @@
+/*======================================== основное ===============================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+
+
+/*======================================== hero ===============================================*/
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 15%;
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 17px;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    line-height: 150%;
+}
+
+/* Изображение персонажей */
+.hero-image img {
+    max-width: 600px;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.server-button {
+    background-color: #6c5ce7;
+    border: none;
+    padding: 20px 66px;
+    color: #fff;
+    border-radius: 35px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    white-space: nowrap;
+
+}
+
+.server-button:hover {
+    background-color: #7d70cf;
+    box-shadow: 0 0 11px 2px rgba(125, 112, 207, 0.5);
+}
+
+.server-ip {
+    background-color: #333;
+    padding: 20px 66px;
+    border-radius: 35px;
+    cursor: pointer;
+    position: relative;
+    white-space: nowrap;
+}
+
+/*======================================== о сервере ===============================================*/
+.about_server{
+    padding: 80px 15%;
+}
+
+.info_card_img{
+    width: 25%;
+}
+
+.info_card_left, .info_card_right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info_card_text{
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+/*======================================== адаптация ===============================================*/
+@media (max-width: 480px) {
+    .request-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .server-button, .server-ip {
+        padding: 10px 20px;
+        font-size: 14px;
+        text-align: center;
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) and (max-resolution: 3dppx) {
+    .hero-image {
+        display: none !important;
+    }
+}
+
+@media (max-width: 1600px) {
+    .server-button{
+        font-size: 14px;
+        white-space: nowrap;
+        padding: 18px 36px;
+    }
+
+    .server-ip{
+        font-size: 14px;
+        white-space: nowrap;
+        padding: 18px 36px;
+    }
+
+    .hero-image{
+        }
+}
